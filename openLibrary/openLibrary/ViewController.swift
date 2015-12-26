@@ -12,10 +12,18 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
     var isbn : String = ""
     @IBOutlet var txtISBN: UITextField!
-    @IBOutlet var txtResultado: UITextView!
+    @IBOutlet var lblTitle: UILabel!
+    @IBOutlet var lblAuthors: UILabel!
+    @IBOutlet var imgCover: UIImageView!
+
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        txtISBN.delegate = self
+        self.txtISBN.delegate = self
+        //self.txtISBN.text = "0373165137"
+        self.lblTitle.text = ""
+        self.lblAuthors.text = ""
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,8 +46,32 @@ class ViewController: UIViewController, UITextFieldDelegate {
         if (datos == nil) {
             showAlert()
         } else {
-            let texto = NSString(data: datos!, encoding: NSUTF8StringEncoding)
-            self.txtResultado.text = texto! as String
+            do {
+                let json = try NSJSONSerialization.JSONObjectWithData(datos!, options:  NSJSONReadingOptions.MutableLeaves)
+                let dic1 = json as! NSDictionary
+                
+                let dic2 = dic1["ISBN:"+self.txtISBN.text!] as! NSDictionary
+                
+                let title : String = dic2["title"] as! NSString as String
+                self.lblTitle.text = title
+                
+                let dic3 = dic2["authors"] as! NSArray
+                
+                var authors : String = ""
+                for item in dic3 {
+                    let obj = item as! NSDictionary
+                    authors += obj["name"] as! NSString as String
+                }
+                self.lblAuthors.text = authors
+                
+                let dic4 = dic2["cover"] as! NSDictionary
+                let sUrl:String = dic4["medium"] as! NSString as String
+                let url:NSURL = NSURL(string: sUrl)!
+                let data:NSData = NSData (contentsOfURL: url)!
+                self.imgCover.image = UIImage (data: data)!
+                
+            }
+            catch _ { }
         }
     }
     
