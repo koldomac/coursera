@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9515"/>
+    </dependencies>
+    <scenes>
+        <!--SizeView-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller identifier="SizeView" id="AgC-eL-Hgc" customClass="SizeView" customModule="PizzaWatch_Extension">
+                    <items>
+                        <group width="1" alignment="left" layout="vertical" id="dg7-wP-rta">
+                            <items>
+                                <label width="1" alignment="center" text="Tamaño" textAlignment="center" baselineAdjustment="alignCenters" id="vAQ-aZ-fko"/>
+                                <picker height="100" alignment="left" id="bY1-M2-I7S">
+                                    <connections>
+                                        <action selector="size_Action:" destination="AgC-eL-Hgc" id="LnV-B8-K1b"/>
+                                    </connections>
+                                </picker>
+                                <separator alignment="left" id="mfM-el-E5K"/>
+                                <button width="1" alignment="left" title="Siguente" id="08p-Jy-E3L">
+                                    <connections>
+                                        <action selector="btnSiguiente_Tap" destination="AgC-eL-Hgc" id="WPo-DM-rWU"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="sizePicker" destination="bY1-M2-I7S" id="NyS-qS-9ul"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="437" y="370"/>
+        </scene>
+        <!--FoodView-->
+        <scene sceneID="RUt-fg-UYA">
+            <objects>
+                <controller identifier="FoodView" id="8rL-Nw-qeH" customClass="FoodView" customModule="PizzaWatch_Extension">
+                    <items>
+                        <group width="1" alignment="left" layout="vertical" id="cJ7-S4-hSm">
+                            <items>
+                                <label width="1" alignment="left" text="Ingredientes" textAlignment="center" id="NzX-3E-OyS"/>
+                            </items>
+                        </group>
+                        <switch width="1" alignment="left" title="Pavo" id="Y9p-vK-m2X">
+                            <connections>
+                                <action selector="pavo:" destination="8rL-Nw-qeH" id="2i5-a6-85d"/>
+                            </connections>
+                        </switch>
+                        <switch width="1" alignment="left" title="Pepperoni" id="Ogk-Dk-Vwg">
+                            <connections>
+                                <action selector="pepperoni:" destination="8rL-Nw-qeH" id="Ty0-lz-igU"/>
+                            </connections>
+                        </switch>
+                        <switch width="1" alignment="left" title="Aceitunas" id="8Mm-sZ-jrG">
+                            <connections>
+                                <action selector="aceitunas:" destination="8rL-Nw-qeH" id="Fd2-D0-Cmi"/>
+                            </connections>
+                        </switch>
+                        <switch width="1" alignment="left" title="Anchoas" id="gvN-g6-pHq">
+                            <connections>
+                                <action selector="anchoas:" destination="8rL-Nw-qeH" id="L3T-70-HV3"/>
+                            </connections>
+                        </switch>
+                        <switch width="1" alignment="left" title="Atún" id="c85-TZ-AMh">
+                            <connections>
+                                <action selector="atun:" destination="8rL-Nw-qeH" id="K0b-eh-Sa2"/>
+                            </connections>
+                        </switch>
+                        <switch width="1" alignment="left" title="Cebolla" id="5PK-kF-1cf">
+                            <connections>
+                                <action selector="cebolla:" destination="8rL-Nw-qeH" id="iyC-0x-a0v"/>
+                            </connections>
+                        </switch>
+                        <separator alignment="left" id="66V-WO-5W0"/>
+                        <button width="1" alignment="left" title="Siguiente" id="hP6-iI-3nC">
+                            <connections>
+                                <action selector="btnSiguiente_Tap" destination="8rL-Nw-qeH" id="18d-3q-ayh"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="437" y="683.5"/>
+        </scene>
+        <!--ResumeView-->
+        <scene sceneID="kHC-mV-095">
+            <objects>
+                <controller identifier="ResumeView" id="qfC-EQ-nXN" customClass="ResumeView" customModule="PizzaWatch_Extension">
+                    <items>
+                        <group width="1" alignment="left" layout="vertical" id="foq-7q-6fH">
+                            <items>
+                                <label width="1" alignment="left" text="Resumen del pedido" textAlignment="center" numberOfLines="2" id="QfN-43-vtN"/>
+                                <separator alignment="left" id="vxi-hQ-Zt4"/>
+                                <label width="1" height="100" alignment="left" text="Label" textAlignment="center" numberOfLines="0" id="YIG-2R-anS"/>
+                                <separator alignment="left" id="cRW-59-ndl"/>
+                                <button width="1" alignment="left" title="Enviar a cocina" id="dee-pz-Ok4">
+                                    <connections>
+                                        <action selector="btnEnviarCocina_Tap" destination="qfC-EQ-nXN" id="6dx-17-b9z"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="resume" destination="YIG-2R-anS" id="xGG-xC-1eQ"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="605" y="604"/>
+        </scene>
+        <!--CheeseView-->
+        <scene sceneID="LqX-Vh-JoR">
+            <objects>
+                <controller identifier="CheeseView" id="64k-fz-qwC" customClass="CheeseView" customModule="PizzaWatch_Extension">
+                    <items>
+                        <group width="1" alignment="left" layout="vertical" id="kwK-RL-9GZ">
+                            <items>
+                                <label width="1" alignment="left" text="Queso" textAlignment="center" id="3sL-Ec-hh7"/>
+                            </items>
+                        </group>
+                        <picker height="100" alignment="left" id="oKi-JD-CRi">
+                            <connections>
+                                <action selector="cheesePicker_action:" destination="64k-fz-qwC" id="Oxy-Kl-4DV"/>
+                            </connections>
+                        </picker>
+                        <separator alignment="left" id="gQ0-Dl-8UB"/>
+                        <button width="1" alignment="left" title="Siguiente" id="IRA-Qp-GOZ">
+                            <connections>
+                                <action selector="btnSiguiente_Tap" destination="64k-fz-qwC" id="wlK-Gd-ngy"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="cheesePicker" destination="oKi-JD-CRi" id="d4V-AF-cZa"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="764" y="370"/>
+        </scene>
+        <!--BodyView-->
+        <scene sceneID="haO-yf-nJS">
+            <objects>
+                <controller identifier="BodyView" id="Jz0-Xb-HxV" customClass="BodyView" customModule="PizzaWatch_Extension">
+                    <items>
+                        <group width="1" alignment="left" layout="vertical" id="miq-8E-gd5">
+                            <items>
+                                <label width="1" alignment="left" text="Masa" textAlignment="center" id="ZCD-PJ-7ql"/>
+                            </items>
+                        </group>
+                        <picker height="100" alignment="left" id="qTb-lx-2OJ">
+                            <connections>
+                                <action selector="masa_Action:" destination="Jz0-Xb-HxV" id="9YZ-za-jM9"/>
+                            </connections>
+                        </picker>
+                        <separator alignment="left" id="rKD-vI-ZqM"/>
+                        <button width="1" alignment="left" title="Siguiente" id="2IX-pF-inc">
+                            <connections>
+                                <action selector="btnSiguiente_Tap" destination="Jz0-Xb-HxV" id="62q-mD-jzi"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="masaPicker" destination="qTb-lx-2OJ" id="5OU-KN-kHH"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="600" y="370"/>
+        </scene>
+    </scenes>
+</document>
